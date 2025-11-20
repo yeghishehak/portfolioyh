@@ -4,8 +4,14 @@ import styles from "./header.module.css"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
+
 
 export default function Header() {
+        const pathname = usePathname();
+        const isHomePage = pathname === "/";
+        
+
       const [isMenuOpen, setIsMenuOpen] = useState(false);
 
         const toggleMenu = () => {
@@ -20,6 +26,8 @@ export default function Header() {
         const words = text.split(" ");
 
         useEffect(() => {
+            if (!isHomePage) return; // exit early if not homepage
+
             const html = document.documentElement;
             const body = document.body;
 
@@ -69,7 +77,7 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-        {mask && (
+        {isHomePage && mask && (
         <div ref={maskRef} className={styles.herosectionMask}>
             <h1 className={styles.slogan} ref={sloganRef}>
             {words.map((word, index) => (
@@ -83,6 +91,7 @@ export default function Header() {
             </h1>
         </div>
         )}
+
 
             <nav className={styles.headerTop}>
                 <div className={styles.menuDiv} onClick={toggleMenu}>
