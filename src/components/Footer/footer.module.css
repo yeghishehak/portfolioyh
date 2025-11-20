@@ -1,0 +1,72 @@
+.footerDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    background-color: black;
+    padding-bottom: 40px;
+}
+
+.svgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+}
+
+.svg {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.text {
+    fill: white;
+    font-family: 'My Soul', sans-serif;
+    font-size: 64px;
+    user-select: none;
+}
+
+
+
+.h1Y, .h1C {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
+
+
+@media (max-width: 954px) {
+    .footerDiv {
+        height: 500px;
+    }
+
+    .text {
+        transform: translate(-65px, 0);
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 682px) {
+    .footerText {
+        transform: translate(0, 70px);
+    }
+    .h1Y, .h1C {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 518px) {
+    .h1Y, .h1C {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 378px) {
+    .h1Y, .h1C {
+        font-size: 14px;
+    }
+}

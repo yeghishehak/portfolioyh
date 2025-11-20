@@ -1,0 +1,311 @@
+@font-face {
+    font-family: "Nadall";
+    src: url("../../fonts/NADALL.TTF") format("truetype");
+}
+
+.projectImage, .githubIcon {
+    user-select: none;
+    pointer-events: none;
+}
+
+.projectsContainer {
+    margin-top: 100px;
+}
+
+.projectsTitleDiv {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: "Nadall", sans-serif;
+    font-size: 130px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.description {
+    font-family: 'Inter', sans-serif;
+    width: 400px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.projectsGrid {
+    margin-top: 80px;
+}
+
+.projectCards {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    column-gap: 50px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    min-height: 650px;
+    background-color: #D9D9D9;
+    border-radius: 33px;
+    transition: all 0.5s ease;
+}
+
+.projectCard:hover {
+    box-shadow: 0px 0px 20px black;
+}
+
+.projectImage {
+    width: 350px;
+    border-radius: 33px;
+}
+
+.seatcraft, .rova, .tintzone, .golddrive {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    margin-left: 10px;
+}
+
+.seatcraftD, .rovaD, .tintzoneD, .golddriveD {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bottomPart1, .bottomPart2, .bottomPart3, .bottomPart4 {
+    display: flex;
+}
+
+.bottomPart2 {
+    margin-top: 40px;
+}
+
+.bottomPart3 {
+    margin-top: 30px;
+}
+
+.bottomPart3 .tags {
+    max-width: 190px;
+}
+
+.bottomPart4 {
+    margin-top: 30px;
+}
+
+.bottomPart4 .tags {
+    max-width: 190px;
+}
+
+.tags {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 10px;
+    max-width: 180px;
+    margin-top: 50px;
+}
+
+.buttonDiv1, .buttonDiv2, .buttonDiv3, .buttonDiv4 {
+    display: flex;
+    gap: 10px;
+    height: 35px;
+    margin-top: 42px;
+}
+
+.buttonDiv2 {
+    margin-left: 20px;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .buttonDiv2 {
+        margin-left: 50px;
+    }
+}
+
+.buttonDiv3 {
+    margin-left: 20px;
+}
+
+.buttonDiv3 .link {
+    transform: translate(0, 8px);
+}
+
+.buttonDiv4 {
+    margin-left: 20px;
+}
+
+.buttonDiv4 .link {
+    transform: translate(0, 8px);
+}
+
+.githubIcon {
+    width: 50px;
+}
+
+.button {
+    all: unset;
+    padding-top: 5px;
+}
+
+.link {
+    all: unset;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    padding: 5px 20px;
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/* FIX: needed for absolute arrow */
+.span {
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s ease;
+    user-select: none;
+}
+
+.link .span::after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    color: white;
+    transition: 0.5s;
+}
+
+.link:hover .span {
+    padding-right: 15px;
+}
+
+.link:hover .span::after {
+    opacity: 1;
+    right: 0;
+}
+
+@media (max-width: 1474px) {
+    .projectsTitleDiv {
+        margin: unset;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .description {
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 738px) {
+    .title {
+        font-size: 90px;
+    }
+    .description {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 586px) {
+    .title {
+        font-size: 70px;
+    }
+    .description {
+        font-size: 13px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 470px) {
+    .title {
+        font-size: 90px;
+    }
+}
+
+@media (max-width: 392px) {
+    .title {
+        font-size: 80px;
+    }
+}
+
+
+@media (max-width: 386px) {
+    .bottomPart1, .bottomPart2, .bottomPart3, .bottomPart4 {
+        flex-direction: column-reverse;
+    }
+
+    .buttonDiv1, .buttonDiv2, .buttonDiv3, .buttonDiv4 {
+        justify-content: center;
+        gap: 20px;
+        margin-left: unset;
+    }
+}
+
+@media (max-width: 378px) {
+    .projectsTitleDiv {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .projectImage {
+        width: 300px;
+    }
+}
+ 
+@media (max-width: 314px) {
+    .title {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 306px) {
+    .projectImage {
+        width: 250px;
+    }
+}
+
+@media (max-width: 261px) {
+    .title {
+        font-size: 50px;
+    }
+    .description {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 250px) {
+    .projectImage {
+        width: 200px;
+    }
+}
+
+@media (max-width: 222px) {
+    .projectCard {
+        min-height: 550px;
+    }
+    .projectImage {
+        width: 150px;
+    }
+
+    .seatcraft, .rova, .tintzone, .golddrive {
+        font-size: 24px;
+    }
+
+    .seatcraftD, .rovaD, .tintzoneD, .golddriveD {
+        font-size: 10px;
+    }
+}

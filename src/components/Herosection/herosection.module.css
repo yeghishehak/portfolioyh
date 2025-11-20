@@ -1,0 +1,140 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(0, -130px);
+    height: 900px;
+}
+
+@font-face {
+  font-family: 'Dead Font Walking';
+  src: url('../../fonts/Dead\ Font\ Walking.otf') format('truetype');
+}
+
+.title {
+    font-family: 'Dead Font Walking', sans-serif;
+    font-size: 250px;
+    font-weight: 400;
+
+    user-select: none;
+}
+
+.imageContainer {
+    transform: translate(0, -450px);
+}
+
+.image {
+    width: 830px;
+    height: 900px;
+    user-select: none;
+    pointer-events: none;
+}
+
+@media (max-width: 1226px) {
+    .container {
+        height: 700px;
+    }
+    .title {
+        font-size: 200px;
+    }
+
+    .image {
+        width: 630px;
+        height: 700px;
+        transform: translate(0, 90px);
+    }
+}
+
+@media (max-width: 994px) {
+    .container {
+        transform: translate(0, -100px);
+        height: 500px;
+    }
+    .title {
+        font-size: 150px;
+    }
+
+    .image {
+        width: 460px;
+        height: 500px;
+        transform: translate(0, 190px);
+    }
+}
+
+@media (max-width: 738px) {
+    .container {
+        transform: translate(0, -80px);
+        height: 350px;
+    }
+    .title {
+        font-size: 120px;
+    }
+
+    .image {
+        width: 370px;
+        height: 400px;
+        transform: translate(0, 235px);
+    }
+}
+
+@media (max-width: 586px) {
+    .container {
+        transform: translate(0, -65px);
+    }
+    .title {
+        font-size: 100px;
+    }
+
+    .image {
+        width: 320px;
+        height: 340px;
+        transform: translate(0, 275px);
+    }
+}
+
+@media (max-width: 470px) {
+    .container {
+        transform: translate(0, -50px);
+        height: 250px;
+    }
+    .title {
+        font-size: 80px;
+    }
+
+    .image {
+        width: 260px;
+        height: 280px;
+        transform: translate(0, 310px);
+    }
+}
+
+@media (max-width: 392px) {
+    .title {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 313px) {
+    .title {
+        font-size: 50px;
+        transform: translate(0, 40px);
+    }
+
+    .image {
+        transform: translate(0, 385px);
+    }
+}
+
+@media (max-width: 202px) {
+    .title {
+        font-size: 40px;
+        transform: translate(0, 60px);
+    }
+
+    .image {
+        width: 230px;
+        height: 245px;
+        transform: translate(0, 425px);
+    }
+}
+

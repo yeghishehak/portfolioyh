@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Aldrich&family=Archivo+Black&family=Audiowide&family=Black+Ops+One&family=Cal+Sans&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Emblema+One&family=Fascinate&family=Fugaz+One&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Krona+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Paytone+One&family=Playwrite+DK+Loopet:wght@100..400&family=Rowdies:wght@300;400;700&family=Russo+One&family=Saira+Stencil+One&family=Tagesschrift&family=Tektur:wght@400..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Ysabeau+SC:wght@1..1000&display=swap');
+
+.herosectionMask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 110vh;
+    touch-action: none;
+    background-color: black;
+    z-index: 999;
+}
+
+.slogan {
+    transform: translate(0, -50px);
+    font-family: 'My Soul', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+
+@media (min-width: 1450px) {
+    .slogan {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 578px) {
+    .slogan {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 386px) {
+    .slogan {
+        font-size: 20px;
+    }
+}
+
+.header {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+}
+
+
+.headerTop {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.buttonsCenter, .resumeDiv {
+    transform: translate(0, 10px);
+    display: block;
+}
+
+.yDiv {
+    transform: translate(-20px, -10px);
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+
+.y {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+
+.buttonR {
+    all: unset;
+    transform: translate(10px, 3px);
+    font-size: 23px;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 37px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.buttonR:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 10px 1px black;
+}
+
+.button {
+    all: unset;
+    position: relative;
+    transform: translate(-30px, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    color: black;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding-bottom: 0.25rem;
+}
+
+.button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover::after {
+    transform: scaleX(1);
+}
+
+.button:not(:hover)::after {
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.link {
+    all: unset;
+}
+
+.buttonMenu {
+    all: unset;
+    transform: translate(10px, 20px);
+    cursor: pointer;
+}
+
+/*Menu Icon smooth transition*/
+
+.iconWrapper {
+  position: relative;
+  width: 30px; /* adjust to your icon size */
+  height: 30px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none; /* so clicks go through */
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+
+
+.dashedLine {
+    transform: translate(0, -10px);
+    height: 3px; /* thickness of the line */
+    width: 100%; /* total width of the line */
+
+    /* create custom dashes */
+    background-image: repeating-linear-gradient(
+    to right,
+    black 0,         /* start color */
+    black 15px,      /* dash width */
+    transparent 15px,
+    transparent 25px /* gap size */
+    );
+}
+
+.mobileMenu {
+  background: rgb(255, 255, 255, 0.7);
+  transform: translate(0, -10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  position: absolute;
+  top: 85px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* Shown state */
+.mobileMenu.open {
+  opacity: 1;
+  max-height: 300px; /* enough height to fit all links */
+  pointer-events: auto;
+}
+
+.linkContainer {
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.linkAboutMobile, .linkProjectsMobile, .linkContactMobile {
+    cursor: pointer;
+}
+
+/* Safari Only */
+
+@supports (-webkit-touch-callout: none) {
+    .button {
+        transform: translate(-30px, -10px);
+    }
+
+    .buttonR {
+        transform: translate(10px, -10px);
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .yDiv {
+        transform: translate(-15px, 0px);
+    }
+}
+
+
+@media (max-width: 1008px) {
+    .buttonsCenter, .resumeDiv {
+        display: none;
+    }
+}
+
+@media (min-width: 1009px) {
+    .menuDiv {
+        display: none;
+    }
+
+    .linkContainer {
+        display: none;
+    }
+}
