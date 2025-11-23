@@ -1,17 +1,53 @@
+"use client";
 
+import gsap from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import {useRef, useEffect} from 'react'
 import styles from "./projects.module.css";
 
-export default function Projects() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Projects({marginTop}) {
+
+    const projectCardsRef = useRef();
+
+    useEffect (() => {
+        const projectCards = projectCardsRef.current.children
+
+        Array.from(projectCards).forEach((card) => {
+            gsap.fromTo(
+                card,
+                {opacity: 0, x: 50, y: 50, filter: "blur(20px)"},
+                {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    filter: "blur(0px)",
+                    delay: 0.1,
+                    transition: "box-shadow 0.3s ease",
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        end: "bottom 80%",
+                        toggleActions: "play none none reverse"
+                    }              
+                }
+            )
+        })
+
+    }, [])
+
     return (
         <section>
-            <div className={styles.projectsContainer}>
+            <div style={{marginTop: marginTop}} className={styles.projectsContainer}>
                 <div className={styles.projectsTitleDiv}>
                     <h1 className={styles.title}>Projects</h1>
                     <p className={styles.description}>I made a lot of projects, but these are the best projects I made so far.</p>
                 </div>
 
                 <div className={styles.projectsGrid}>
-                    <div className={styles.projectCards}>
+                    <div ref={projectCardsRef} className={styles.projectCards}>
                         <div className={styles.projectCard}>
                             <div className={styles.imageDiv}>
                                 <img draggable="false" src="/cards/seatcraft.png" alt="SeatCraft Project" className={styles.projectImage} />

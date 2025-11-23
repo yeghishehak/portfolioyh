@@ -63,13 +63,16 @@ export default function Header() {
             gsap.fromTo(
                 maskRef.current,
                 {opacity: 1, filter: "blur(0px)"},
-                {opacity: 0, filter: "blur(10px)", duration: 2, delay: 3.5, onComplete: () => {
-                    setMask(false);
+                {opacity: 0, filter: "blur(10px)", duration: 0.8, delay: 3.5, onStart: () => {
                     html.style.overflow = "";
                     html.style.width = "";
                     body.style.overflow = "";
                     body.style.width = "";
-                }}
+                },
+                onComplete: () => {
+                    setMask(false);
+                }
+            }
             )
         }, []);
 

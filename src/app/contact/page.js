@@ -6,8 +6,8 @@ export default function ContactPage() {
     return (
         <>
             <Header />
-            <Contacts />
-            <Footer marginTop="130px" />
+            <Contacts marginTop={50} />
+            <Footer marginTop={130} />
         </>
     );
 }

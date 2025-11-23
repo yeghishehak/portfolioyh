@@ -1,8 +1,61 @@
+"use client";
+
 import styles from './about.module.css';
 
-export default function About() {
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function About({marginTop}) {
+
+    const skillsListLeft = useRef(null);
+    const skillsListRight = useRef(null);
+
+    useEffect(() => {
+        // LEFT SIDE
+        gsap.fromTo(
+            Array.from(skillsListLeft.current.children), // make a real array
+            { opacity: 0, filter: "blur(10px)", x: -10 },
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                x: 10,
+                duration: 0.5,
+                stagger: 0.1,
+                delay: 0.2,
+                scrollTrigger: {
+                    trigger: skillsListLeft.current,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
+        // RIGHT SIDE
+        gsap.fromTo(
+            Array.from(skillsListRight.current.children),
+            { opacity: 0, filter: "blur(10px)", x: -10 },
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                x: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                delay: 0.4,
+                scrollTrigger: {
+                    trigger: skillsListRight.current,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }, []);
+
     return (
-        <section>
+        <section style={{marginTop: marginTop}}>
             <div className={styles.aboutSection}>
 
                 <div className={styles.aboutHeading}>
@@ -14,7 +67,7 @@ export default function About() {
 
                     <div className={styles.skillsContainerLeft}>
                         <h2 className={styles.developer}>Developer</h2>
-                        <div className={styles.skillsListLeft}>
+                        <div ref={skillsListLeft} className={styles.skillsListLeft}>
                             <img draggable="false" className={styles.skillIcon} src="/development/vsc.svg" />
                             <img draggable="false" className={styles.skillIcon} src="/development/html5.svg" />
                             <img draggable="false" className={styles.skillIcon} src="/development/css.svg" />
@@ -34,7 +87,7 @@ export default function About() {
 
                     <div className={styles.skillsContainerRight}>
                         <h2 className={styles.designer}>Designer <br/> (Exploring)</h2>
-                        <div className={styles.skillsListRight}>
+                        <div ref={skillsListRight} className={styles.skillsListRight}>
                             <img draggable="false" className={styles.skillIcon} src="/design/blender.svg" />
                             <img draggable="false" className={styles.skillIcon} src="/design/figma.svg" />
                             <img draggable="false" className={styles.skillIcon} src="/design/ui.svg" />

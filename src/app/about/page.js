@@ -6,7 +6,7 @@ export default function AboutPage() {
     return (
         <>
             <Header />
-            <About />
+            <About marginTop={50} />
             <Footer />
         </>
     );

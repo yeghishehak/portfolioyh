@@ -62,6 +62,7 @@
 }
 
 .skillIcon {
+    opacity: 0;
     width: 100px;
     height: auto;
     user-select: none;
@@ -100,7 +101,7 @@
         transform: translate(30px, 0);
     }
     .skillsListLeft {
-        transform: translate(45px, 0);
+        transform: translate(32px, 0);
     }
 
     .designer {
@@ -146,7 +147,7 @@
 
     .skillsListLeft {
         width: 350px;
-        transform: translate(48px, 0);
+        transform: translate(38px, 0);
     }
 
     .skillsListRight {
@@ -175,7 +176,7 @@
     .skillsListLeft {
         max-width: 300px;
         row-gap: 50px;
-        transform: translate(55px, 0);
+        transform: translate(45px, 0);
     }
 
     .skillsListRight {
@@ -196,7 +197,7 @@
     .skillsListLeft {
         max-width: 200px;
         row-gap: 50px;
-        transform: translate(43px, 0);
+        transform: translate(33px, 0);
     }
 
     .skillsListRight {

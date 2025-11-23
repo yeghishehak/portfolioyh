@@ -1,12 +1,39 @@
 "use client";
 import styles from "./contacts.module.css";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import validator from "validator";
 import sanitizeHTML from "sanitize-html";
 
-export default function Contact () {
+import gsap from 'gsap';
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Contact ({marginTop}) {
     const form = useRef();
+
+    const contactSectionRef = useRef();
+
+    useEffect(() => {
+        gsap.fromTo(
+            contactSectionRef.current,
+            {opacity: 0, filter: "blur(20px)", x: -20},
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                x: 0,
+                transition: "ease",
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: contactSectionRef.current,
+                    start: "top 80%",
+                    end: "bottom 80%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        )
+    }, [])
 
     const sanitizeInput = (input) => 
         sanitizeHTML(input, {
@@ -58,7 +85,7 @@ export default function Contact () {
     }
 
     return (
-        <section className={styles.contactSection}>
+        <section ref={contactSectionRef} style={{marginTop: marginTop}} className={styles.contactSection}>
             <div className={styles.contactDiv}>
                 <div className={styles.contactLeft}>
                     <h1 className={styles.title}>Contact</h1>

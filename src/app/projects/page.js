@@ -6,7 +6,7 @@ export default function ProjectsPage() {
     return (
         <>
             <Header />
-            <Projects />
+            <Projects marginTop={50} />
             <Footer marginTop="130px" />
         </>
     );

@@ -4,16 +4,17 @@ import About from "../components/About/about.js";
 import Projects from "../components/Project/projects.js";
 import Contacts from "../components/Contact/contacts.js";
 import Footer from "../components/Footer/footer.js";
+import Autoscroll from "../components/Autoscroll/autoscroll.js";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-      <Herosection />
-      <About />
-      <Projects />
-      <Contacts />
-      <Footer />
-    </div>
+      <Autoscroll>
+        <Header />
+        <Herosection />
+        <About />
+        <Projects />
+        <Contacts />
+        <Footer />
+      </Autoscroll>
   );
 }
