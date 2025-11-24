@@ -25,7 +25,7 @@ export default function Projects({marginTop}) {
                     filter: "blur(0px)",
                     delay: 0.1,
                     transition: "box-shadow 0.3s ease",
-                    duration: 1,
+                    duration: 0.6,
                     scrollTrigger: {
                         trigger: card,
                         start: "top 80%",
