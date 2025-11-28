@@ -136,7 +136,7 @@ export default function Header() {
                     <div className={styles.linkContainer}><Link className={`${styles.link} ${styles.linkAboutMobile}`} href="/about" onClick={toggleMenu}>about</Link></div>
                     <div className={styles.linkContainer}><Link className={`${styles.link} ${styles.linkProjectsMobile}`} href="/projects" onClick={toggleMenu}>projects</Link></div>
                     <div className={styles.linkContainer}><Link className={`${styles.link} ${styles.linkContactMobile}`} href="/contact" onClick={toggleMenu}>contact</Link></div>
-                    <div className={styles.linkContainer}><Link className={`${styles.link} ${styles.linkContactMobile}`} href="/resume" onClick={toggleMenu}>resume</Link></div>
+                    <div className={styles.linkContainer}><a className={`${styles.link} ${styles.linkContactMobile}`} href="./Yeghishe's Resume For Website.pdf" download onClick={toggleMenu}>resume</a></div>
                 </div>
             </nav>
             <div className={styles.dashedLine}></div>
