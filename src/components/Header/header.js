@@ -115,7 +115,7 @@ export default function Header() {
                 </div>
 
                 <div className={styles.resumeDiv}>
-                    <Link className={styles.link} href="./Yeghishe's Resume For Website.pdf" download><button className={styles.buttonR}>Resume</button></Link>
+                    <a className={styles.link} href="./Yeghishe's Resume For Website.pdf" download><button className={styles.buttonR}>Resume</button></a>
                 </div>
 
                 <div className={styles.buttonsCenter}>
