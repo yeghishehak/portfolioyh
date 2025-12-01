@@ -104,8 +104,8 @@ export default function Contact ({marginTop}) {
                         <div className={styles.socialMedia}>
                             <img className={styles.thumb} src="/socialmedia/Thumb.svg" />
                             <a href="https://www.instagram.com/frontend_actions/" target="_blank" rel="noopener noreferrer"><img className={styles.instagram} src="/socialmedia/Instagram.svg" /></a>
-                            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"><img className={styles.tiktok} src="/socialmedia/Tiktok.svg" /></a>
-                            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img className={styles.youtube} src="/socialmedia/Youtube.svg" /></a>
+                            <a href="https://www.tiktok.com/@frontend_actions" target="_blank" rel="noopener noreferrer"><img className={styles.tiktok} src="/socialmedia/Tiktok.svg" /></a>
+                            <a href="https://www.youtube.com/@frontend_actions" target="_blank" rel="noopener noreferrer"><img className={styles.youtube} src="/socialmedia/Youtube.svg" /></a>
                         </div>
                     </div>
                 </div>
